@@ -1,0 +1,33 @@
+﻿@model List<Product>
+
+<h1>Trang chủ</h1>
+
+<h2>Menu website</h2>
+<ul>
+    @foreach (var item in ViewBag.MenuItems)
+    {
+            <li><a href="@item.Url">@item.Name</a></li>
+    }
+</ul>
+
+<h2>Sản phẩm bán chạy</h2>
+<ul>
+    @foreach (var product in Model)
+    {
+            <li>
+                <h3>@product.Name</h3>
+                <img src="@product.ImageUrl" alt="Product Image" width="200" height="200">
+                <p>Giá: @product.Price</p>
+            </li>
+    }
+</ul>
+
+<h2>Sản phẩm mới nhất</h2>
+<!-- Hiển thị danh sách sản phẩm mới nhất -->
+
+<h2>Sản phẩm khuyến mãi</h2>
+<!-- Hiển thị danh sách sản phẩm khuyến mãi -->
+
+<footer>
+    <!-- Footer content -->
+</footer>

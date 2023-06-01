@@ -1,0 +1,27 @@
+﻿@model List<Product>
+
+<h1>Danh sách sản phẩm</h1>
+
+<h2>Menu website</h2>
+<ul>
+    @foreach (var item in ViewBag.MenuItems)
+    {
+        <li><a href="@item.Url">@item.Name</a></li>
+    }
+</ul>
+
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>
+            <h3>@product.Name</h3>
+            <img src="@product.ImageUrl" alt="Product Image" width="200" height="200">
+            <p>Giá: @product.Price</p>
+            <a href="/Product/Details/@product.Id">Chi tiết</a>
+        </li>
+    }
+</ul>
+
+<footer>
+    <!-- Footer content -->
+</footer>
